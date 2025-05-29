@@ -1,8 +1,16 @@
-import mongooes from "mongooes"
+import mongoose from "mongoose"
 
-const UserSchema = new mongooes.Schema({
+let UserSchema = new mongoose.Schema({
 
-    name:{
+    fullname:{
+        type:String,
+        required:true,
+    },
+    profilePic:{
+        type:String,
+        required:true,
+    },
+    username:{
         type:String,
         required:true,
     },
@@ -14,8 +22,29 @@ const UserSchema = new mongooes.Schema({
         type:String,
         required:true,
     },
-})
+    bio:{
+        type:String,
+        default:"",
+    },
+    postCount:{
+        type:Number,
+        default:0,
+    },
+     // followers: [
+    //     {
+    //         type: mongoose.Schema.Types.ObjectId,
+    //         ref: "User",
+    //     },
+    // ],
+    // following: [
+    //     {
+    //         type: mongoose.Schema.Types.ObjectId,
+    //         ref: "User",
+    //     },
+    // ],
 
-const User = mongooes.model("User",UserSchema)
+});
+
+const User = mongoose.model("User",UserSchema)
 
 export default User;
