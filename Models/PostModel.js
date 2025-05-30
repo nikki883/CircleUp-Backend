@@ -6,10 +6,6 @@ let LikeSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"User",
       },
-      count:{
-        type:Number,
-        default:0
-      }
 })
 
 let CommentSchema = new mongoose.Schema({
@@ -34,7 +30,7 @@ let PostSchema = new mongoose.Schema({
           type:String,
           required:true,
     },
-    caption:{
+    caption:{ 
         type:String,
         default:"",
     },

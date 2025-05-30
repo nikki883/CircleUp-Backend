@@ -7,11 +7,21 @@ export async function allUser(req,res){
 }
 
 
-export async function login(req,res){
+export async function login(req, res) {
+   try
+   {
 
-    const newUser = await User.findOne({email: req.body.email });
-    return res.status(201).json(newUser);
-
+     let newUser = await User.findOne({ email: req.body.email });
+     if(!newUser)
+     {
+        return res.status(400).json({error: "User Not Found"})
+     }
+     return res.json(newUser)
+   }
+   catch(err)
+   {
+    return res.status(400).json({error: err})
+   }
 }
 
 
