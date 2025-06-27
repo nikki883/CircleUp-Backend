@@ -12,7 +12,7 @@ let UserSchema = new mongoose.Schema({
     },
     username:{
         type:String,
-        required:true,
+        required:true, 
     },
     email:{
         type:String,
@@ -20,7 +20,7 @@ let UserSchema = new mongoose.Schema({
     },
     password:{
         type:String,
-        // required:true,
+        required:true,
     },
     bio:{
         type:String,

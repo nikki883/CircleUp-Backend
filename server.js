@@ -1,10 +1,11 @@
 import express from "express";
 import "dotenv/config";
 import cors from "cors";
-import CONNECTDB from "./Config/DbConfig.js";
 
 import UserRoutes from "./Routes/UserRoute.js"
 import PostRoutes from "./Routes/PostRoute.js"
+
+import CONNECTDB from "./Config/DbConfig.js";
 
 CONNECTDB();
 
